@@ -41,7 +41,7 @@ const SelectorPaymentView = (props: SelectorPaymentViewProps): React.ReactElemen
         sx={{ position: 'fixed', bottom: 15, color: 'white', width: '92%' }}
         color={process.env.REACT_APP_IS_PRODUCTION === 'true' ? 'primary' : 'secondary'}
       >
-        Navigate
+        IR A PAGAR
       </Fab>
     </Container>
   );
