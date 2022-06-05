@@ -18,4 +18,4 @@ RUN npm install
 COPY . ./
 
 # start app
-CMD ["npm", "start-mac"]
+CMD ["npm", "start"]
