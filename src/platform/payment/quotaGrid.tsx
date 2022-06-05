@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { StudentOrders } from '../../shared/models/StudentOrders';
-import { Card, Checkbox, Paper, Typography } from '@mui/material';
+import { Checkbox, Typography } from '@mui/material';
 
 interface QuotaGridProps {
   quotes: StudentOrders[];
