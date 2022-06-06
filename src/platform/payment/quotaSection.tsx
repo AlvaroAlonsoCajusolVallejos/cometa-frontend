@@ -8,10 +8,12 @@ import QuotaGrid from './quotaGrid';
 
 interface QuotaSectionProps {
   studentOrders: StudentOrders[];
+  quotesForPaid: any;
+  setQuotesForPaid: (quotesForPaid: any) => void;
 }
 
 const QuotaSection = (props: QuotaSectionProps): React.ReactElement => {
-  const { studentOrders } = props;
+  const { studentOrders, quotesForPaid, setQuotesForPaid } = props;
 
   const quotesPaid = studentOrders.filter((quote) => quote.status === 'PAID');
   const quotesPending = studentOrders.filter((quote) => quote.status === 'DUE');
@@ -25,7 +27,13 @@ const QuotaSection = (props: QuotaSectionProps): React.ReactElement => {
             <Typography sx={{ fontWeight: 'bold' }}>Cuotas Pagadas</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <QuotaGrid quotes={quotesPaid} type={1} />
+            <QuotaGrid
+              studentOrders={studentOrders}
+              quotes={quotesPaid}
+              quotesForPaid={quotesForPaid}
+              setQuotesForPaid={setQuotesForPaid}
+              type={1}
+            />
           </AccordionDetails>
         </Accordion>
       </Card>
@@ -35,7 +43,13 @@ const QuotaSection = (props: QuotaSectionProps): React.ReactElement => {
             <Typography sx={{ fontWeight: 'bold' }}>Cuotas Pendientes</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <QuotaGrid quotes={quotesPending} type={2} />
+            <QuotaGrid
+              studentOrders={studentOrders}
+              quotes={quotesPending}
+              quotesForPaid={quotesForPaid}
+              setQuotesForPaid={setQuotesForPaid}
+              type={2}
+            />
           </AccordionDetails>
         </Accordion>
       </Card>
@@ -45,7 +59,13 @@ const QuotaSection = (props: QuotaSectionProps): React.ReactElement => {
             <Typography sx={{ fontWeight: 'bold' }}>Cuotas Futuras</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <QuotaGrid quotes={quotesFuture} type={3} />
+            <QuotaGrid
+              studentOrders={studentOrders}
+              quotes={quotesFuture}
+              quotesForPaid={quotesForPaid}
+              setQuotesForPaid={setQuotesForPaid}
+              type={3}
+            />
           </AccordionDetails>
         </Accordion>
       </Card>

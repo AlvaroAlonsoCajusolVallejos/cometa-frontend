@@ -17,4 +17,8 @@ interface StudentOrders {
   payin: Payin | null;
 }
 
-export type { StudentOrders };
+interface QuotesForPaid {
+  id: string;
+  value: boolean
+}
+export type { Payin, StudentOrders, QuotesForPaid };

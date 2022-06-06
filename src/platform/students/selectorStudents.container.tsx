@@ -10,6 +10,7 @@ const SelectorStudentsContainer = (): React.ReactElement => {
 
   const handleSelectedStudent = (student: StudentInfo) => {
     localStorage.setItem('selectedStudent', JSON.stringify(student));
+    localStorage.removeItem('selectedStudentOrders');
     navigate(`/payment/${student.last_name + student.first_name}`);
   };
 
