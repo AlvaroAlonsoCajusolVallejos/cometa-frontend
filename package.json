@@ -1,6 +1,5 @@
 {
   "name": "cometa-frontend-app",
-  "homepage": "http://167.99.153.250/cometa-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
