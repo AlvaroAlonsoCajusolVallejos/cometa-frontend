@@ -17,5 +17,9 @@ RUN npm install
 # add app
 COPY . ./
 
+#exponer puerto 3000
+EXPOSE 3000
+
 # start app
 CMD ["npm", "start"]
+
