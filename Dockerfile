@@ -1,25 +1,8 @@
-# pull the base image
-FROM node:alpine
+FROM node:14.17.0
 
-# set the working direction
-WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# install app dependencies
-COPY package.json ./
-
-COPY package-lock.json ./
-
-RUN npm install
-
-# add app
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN yarn cache clean && yarn --update-checksums
 COPY . ./
-
-#exponer puerto 3000
 EXPOSE 3000
-
-# start app
-CMD ["npm", "start"]
-
+CMD ["yarn", "start"]
